@@ -28,6 +28,12 @@
     "articles-e2e": {
       "tags": [],
       "implicitDependencies": ["articles"]
+    },
+    "common-ui-kit": {
+      "tags": ["type:ui"]
+    },
+    "common-util-mock": {
+      "tags": []
     }
   }
 }

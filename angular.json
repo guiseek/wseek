@@ -26,7 +26,14 @@
               "apps/articles/src/assets"
             ],
             "styles": ["apps/articles/src/styles.scss"],
-            "scripts": []
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "libs/common/ui-kit/scss",
+                "libs/common/ui-kit/src/lib"
+              ]
+            },
+            "scripts": [],
+            "allowedCommonJsDependencies": ["lodash"]
           },
           "configurations": {
             "production": {
@@ -119,6 +126,90 @@
             "tsConfig": ["apps/articles-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/articles-e2e/**/*"]
           }
+        }
+      }
+    },
+    "common-ui-kit": {
+      "projectType": "library",
+      "root": "libs/common/ui-kit",
+      "sourceRoot": "libs/common/ui-kit/src",
+      "prefix": "ui",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/common/ui-kit/tsconfig.lib.json",
+            "project": "libs/common/ui-kit/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/common/ui-kit/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/ui-kit/tsconfig.lib.json",
+              "libs/common/ui-kit/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/common/ui-kit/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/common/ui-kit/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "common-util-mock": {
+      "projectType": "library",
+      "root": "libs/common/util-mock",
+      "sourceRoot": "libs/common/util-mock/src",
+      "prefix": "util",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/common/util-mock/tsconfig.lib.json",
+            "project": "libs/common/util-mock/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/common/util-mock/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/util-mock/tsconfig.lib.json",
+              "libs/common/util-mock/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/common/util-mock/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/common/util-mock/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }

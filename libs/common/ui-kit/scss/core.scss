@@ -1,0 +1,33 @@
+// Este arquivo deve ser importado apenas uma vez!
+// Use seek.scss para acessar Seek/Material mixins
+
+// Perfect scrollbar
+@import '~perfect-scrollbar/css/perfect-scrollbar';
+
+// Seek
+@import 'seek';
+
+// Material styles
+@include mat-core();
+
+// Mixins
+@import 'mixins/colors';
+@import 'mixins/material';
+@import 'mixins/typography';
+@import 'mixins/page-layouts';
+@import 'mixins/cards';
+@import 'mixins/forms';
+
+// Partials
+@import 'partials/normalize';
+@import 'partials/scrollbars';
+@import 'partials/helpers';
+@import 'partials/general';
+@import 'partials/icons';
+@import 'partials/angular-material-fix';
+@import 'partials/docs';
+@import 'partials/navigation';
+@import 'partials/print';
+
+// Plugins
+@import 'plugins/plugins';

@@ -15,7 +15,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@swseek/ui-kit": ["libs/common/ui-kit/src/index.ts"],
+      "@swseek/common/util-mock": ["libs/common/util-mock/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

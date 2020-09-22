@@ -1,0 +1,118 @@
+<div id="academy-article" class="page-layout simple left-sidebar inner-scroll">
+  <!-- SIDEBAR -->
+  <seek-sidebar
+    class="sidebar"
+    name="academy-article-left-sidebar-1"
+    position="left"
+    lockedOpen="gt-md"
+  >
+    <!-- SIDEBAR CONTENT -->
+    <div class="content" seekPerfectScrollbar>
+      <div class="steps">
+        <div
+          class="step"
+          *ngFor="
+            let step of article.steps;
+            let i = index;
+            let last = last;
+            let first = first
+          "
+          (click)="gotoStep(i)"
+          [ngClass]="{
+            current: currentStep === i,
+            completed: currentStep > i,
+            last: last,
+            first: first
+          }"
+        >
+          <div class="index">
+            <span>{{ i + 1 }}</span>
+          </div>
+          <div class="title">{{ step.title }}</div>
+        </div>
+      </div>
+    </div>
+    <!-- / SIDEBAR CONTENT -->
+  </seek-sidebar>
+  <!-- / SIDEBAR -->
+
+  <!-- CENTER -->
+  <div class="center">
+    <!-- HEADER -->
+    <div class="header accent p-24" fxLayout="row" fxLayoutAlign="start center">
+      <button
+        mat-icon-button
+        class="sidebar-toggle mr-16"
+        fxHide.gt-md
+        (click)="toggleSidebar('academy-article-left-sidebar-1')"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        class="mr-16"
+        [routerLink]="'/academy/articles'"
+      >
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+
+      <div>
+        <h2>{{ article.title }}</h2>
+      </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div id="article-content" class="content">
+      <ng-container *ngFor="let step of article.steps; let i = index">
+        <div
+          class="article-step"
+          seekPerfectScrollbar
+          *ngIf="currentStep === i"
+          [@slideIn]="animationDirection"
+        >
+          <div
+            id="article-step-content"
+            class="article-step-content"
+            [innerHTML]="step.content"
+          ></div>
+        </div>
+      </ng-container>
+    </div>
+    <!-- / CONTENT -->
+
+    <div class="step-navigation">
+      <button
+        mat-fab
+        class="previous seek-blue-fg seek-white"
+        (click)="gotoPreviousStep()"
+        [disabled]="currentStep === 0"
+        [fxHide]="currentStep === 0"
+      >
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+
+      <button
+        mat-fab
+        class="next seek-blue-fg seek-white"
+        (click)="gotoNextStep()"
+        [disabled]="currentStep === article.totalSteps - 1"
+        [fxHide]="currentStep === article.totalSteps - 1"
+      >
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+
+      <button
+        mat-fab
+        class="done mat-accent seek-white-fg"
+        routerLink="/academy/articles"
+        [disabled]="currentStep !== article.totalSteps - 1"
+        [fxShow]="currentStep === article.totalSteps - 1"
+      >
+        <mat-icon>check</mat-icon>
+      </button>
+    </div>
+  </div>
+  <!-- / CENTER -->
+</div>

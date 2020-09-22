@@ -1,0 +1,128 @@
+<div id="academy-articles" class="page-layout simple">
+  <!-- HEADER -->
+  <div
+    class="header accent p-16 p-sm-24"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+  >
+    <div class="hero-text">
+      <!-- <mat-icon class="hero-icon">school</mat-icon> -->
+      <seek-logo class="hero-icon"></seek-logo>
+      <h1 [@animate]="{ value: '*', params: { delay: '100ms', y: '25px' } }">
+        WELCOME TO ACADEMY
+      </h1>
+      <h3 [@animate]="{ value: '*', params: { delay: '100ms', y: '25px' } }">
+        Our articles will step you through the process of building a small
+        application, or adding a new feature to an existing application.
+      </h3>
+    </div>
+  </div>
+  <!-- / HEADER -->
+
+  <!-- CONTENT -->
+  <div class="content p-24">
+    <div fxLayout="column" fxLayoutAlign="center">
+      <div
+        class="filters"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        fxLayout.gt-xs="row"
+        fxLayoutAlign.gt-xs="space-between center"
+      >
+        <mat-form-field
+          appearance="outline"
+          floatLabel="always"
+          class="article-search"
+        >
+          <mat-label>Search for a article</mat-label>
+          <input
+            matInput
+            placeholder="Enter a keyword..."
+            [(ngModel)]="searchTerm"
+            (input)="filterArticlesByTerm()"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="category-selector">
+          <mat-label>Category</mat-label>
+          <mat-select
+            [(ngModel)]="currentCategory"
+            (selectionChange)="filterArticlesByCategory()"
+          >
+            <mat-option [value]="'all'">
+              All
+            </mat-option>
+            <mat-option
+              *ngFor="let category of categories"
+              [value]="category.value"
+            >
+              {{ category.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div
+        class="articles"
+        fxLayout="row wrap"
+        fxLayoutAlign="center"
+        [@animateStagger]="{ value: '50' }"
+      >
+        <div
+          class="article"
+          *ngFor="let article of filteredArticles"
+          fxFlex="100"
+          fxFlex.gt-xs="50"
+          fxFlex.gt-sm="33"
+          [ngClass]="article.category"
+          [@animate]="{ value: '*', params: { y: '100%' } }"
+        >
+          <div class="article-content" fxLayout="column" fxFlex="1 1 auto">
+            <div
+              class="header"
+              fxLayout="row"
+              fxLayoutAlign="center center"
+              [ngClass]="article.category + '-bg'"
+            >
+              <div class="category" fxFlex>
+                {{ article.category }}
+              </div>
+
+              <div class="length" fxLayout="row" fxLayoutAlign="center center">
+                <mat-icon class="length-icon s-20">access_time</mat-icon>
+                <div class="min">{{ article.length }} min</div>
+              </div>
+            </div>
+
+            <div
+              class="content"
+              fxLayout="column"
+              fxLayoutAlign="center center"
+              fxFlex="1 1 auto"
+            >
+              <div class="h1">{{ article.title }}</div>
+              <div class="updated">Updated {{ article.updated }}</div>
+            </div>
+
+            <div class="footer" fxLayout="row" fxLayoutAlign="center center">
+              <a
+                mat-button
+                color="accent"
+                [routerLink]="
+                  '/academy/articles/' + article.id + '/' + article.slug
+                "
+              >
+                START
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="no-articles" *ngIf="filteredArticles.length === 0">
+          No articles found!
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / CONTENT -->
+</div>

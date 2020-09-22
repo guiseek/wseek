@@ -1,0 +1,60 @@
+<div
+  class="navbar-top"
+  [ngClass]="seekConfig.layout.navbar.secondaryBackground"
+>
+  <div class="logo">
+    <img class="logo-icon" src="assets/images/logos/seek.svg" />
+    <span class="logo-text secondary-text">SEEK</span>
+  </div>
+
+  <div class="buttons">
+    <button
+      mat-icon-button
+      class="toggle-sidebar-folded"
+      (click)="toggleSidebarFolded()"
+      fxHide.lt-lg
+    >
+      <mat-icon class="secondary-text">menu</mat-icon>
+    </button>
+
+    <button
+      mat-icon-button
+      class="toggle-sidebar-opened"
+      (click)="toggleSidebarOpened()"
+      fxHide.gt-md
+    >
+      <mat-icon class="secondary-text">arrow_back</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div
+  class="navbar-scroll-container"
+  [ngClass]="seekConfig.layout.navbar.primaryBackground"
+  seekPerfectScrollbar
+  [seekPerfectScrollbarOptions]="{ suppressScrollX: true }"
+>
+  <div
+    class="user"
+    fxLayout="column"
+    [ngClass]="seekConfig.layout.navbar.secondaryBackground"
+  >
+    <div class="h3 username">Guilherme Siquinelli</div>
+    <div class="h5 email hint-text mt-8">guiseek@mail.com</div>
+    <div
+      class="avatar-container"
+      [ngClass]="seekConfig.layout.navbar.primaryBackground"
+    >
+      <img
+        src="https://avatars0.githubusercontent.com/u/5638096?s=460&u=4185615f5a706227ecb6b0b8a78c4db2b43fa579&v=4"
+        alt=""
+        class="avatar"
+      />
+      <!-- <img class="avatar" src="assets/images/avatars/Velazquez.jpg" /> -->
+    </div>
+  </div>
+
+  <div class="navbar-content">
+    <seek-navigation class="material2" layout="vertical"></seek-navigation>
+  </div>
+</div>

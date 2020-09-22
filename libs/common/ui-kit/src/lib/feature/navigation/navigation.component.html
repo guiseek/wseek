@@ -1,0 +1,45 @@
+<div
+  class="nav"
+  [ngClass]="{
+    horizontal: layout === 'horizontal',
+    vertical: layout === 'vertical'
+  }"
+>
+  <!-- Vertical Navigation Layout -->
+  <ng-container *ngIf="layout === 'vertical'">
+    <ng-container *ngFor="let item of navigation">
+      <seek-nav-vertical-group
+        *ngIf="item.type == 'group'"
+        [item]="item"
+      ></seek-nav-vertical-group>
+      <seek-nav-vertical-collapsable
+        *ngIf="item.type == 'collapsable'"
+        [item]="item"
+      ></seek-nav-vertical-collapsable>
+      <seek-nav-vertical-item
+        *ngIf="item.type == 'item'"
+        [item]="item"
+      ></seek-nav-vertical-item>
+    </ng-container>
+  </ng-container>
+  <!-- / Vertical Navigation Layout -->
+
+  <!-- Horizontal Navigation Layout -->
+  <ng-container *ngIf="layout === 'horizontal'">
+    <ng-container *ngFor="let item of navigation">
+      <seek-nav-horizontal-collapsable
+        *ngIf="item.type == 'group'"
+        [item]="item"
+      ></seek-nav-horizontal-collapsable>
+      <seek-nav-horizontal-collapsable
+        *ngIf="item.type == 'collapsable'"
+        [item]="item"
+      ></seek-nav-horizontal-collapsable>
+      <seek-nav-horizontal-item
+        *ngIf="item.type == 'item'"
+        [item]="item"
+      ></seek-nav-horizontal-item>
+    </ng-container>
+  </ng-container>
+  <!-- / Horizontal Navigation Layout -->
+</div>

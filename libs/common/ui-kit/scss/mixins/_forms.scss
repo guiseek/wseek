@@ -1,0 +1,44 @@
+button,
+input[type='email'],
+input[type='tel'],
+input[type='text'],
+input[type='password'],
+input[type='image'],
+input[type='submit'],
+input[type='button'],
+input[type='search'],
+textarea {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+}
+
+button[disabled] {
+  opacity: 0.4;
+}
+
+@mixin contenteditable {
+  display: inline-flex;
+  min-width: 60px;
+  min-height: 20px;
+  padding: 4px 8px 0;
+  outline: none;
+  border-width: 1px;
+  border-color: transparent;
+  border-style: solid;
+  border-radius: 5px;
+  transition: border-color 200ms linear;
+
+  &.focused {
+    border-color: #e0e0e0;
+  }
+  &:hover {
+    cursor: text;
+    border-color: #e0e0e0;
+  }
+}
+
+[formControlName][contenteditable] {
+  @include contenteditable();
+}
