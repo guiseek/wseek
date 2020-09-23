@@ -1,0 +1,7 @@
+export { <%= classify(name) %>ListComponent } from './<%=dasherize(name)%>-list/<%=dasherize(name)%>-list.component';
+export { <%= classify(name) %>EditComponent } from './<%=dasherize(name)%>-edit/<%=dasherize(name)%>-edit.component';
+export { <%= name.toUpperCase() %>_ROUTES } from './<%=dasherize(name)%>.routes';
+export { <%= classify(name) %>Service } from './<%=dasherize(name)%>.service';
+export { <%= classify(name) %>Filter } from './<%=dasherize(name)%>.filter';
+export { <%= classify(name) %>Module } from './<%=dasherize(name)%>.module';
+export { <%= classify(name) %> } from './<%=dasherize(name)%>';

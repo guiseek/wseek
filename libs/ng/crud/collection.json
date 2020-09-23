@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "name": "ng-crud",
+  "version": "0.0.1",
+  "schematics": {
+    "ng-crud": {
+      "factory": "./src/schematics/ng-crud/schematic",
+      "schema": "./src/schematics/ng-crud/schema.json",
+      "description": "ng-crud schematic"
+    },
+    "ng-crud-module": {
+      "factory": "./src/schematics/ng-crud-module/index",
+      "schema": "./src/schematics/ng-crud-module/schema.json",
+      "description": "Crud module for lib"
+    }
+  }
+}

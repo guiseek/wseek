@@ -1,0 +1,40 @@
+{
+  "title": "Artigo",
+  "entity": "article",
+  "api": {
+    "url": "/api/article"
+  },
+  "filter": [
+    "tags"
+  ],
+  "fields": [
+    {
+      "name": "id",
+      "label": "Id",
+      "isId": true,
+      "readonly": true,
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "label": "Título"
+    },
+    {
+      "name": "resume",
+      "type": "string",
+      "label": "Resumo"
+    },
+    {
+      "name": "content",
+      "type": "string",
+      "label": "Conteúdo"
+    },
+    {
+      "name": "stars",
+      "type": "string",
+      "control": "number",
+      "label": "Stars"
+    }
+  ]
+}

@@ -37,6 +37,20 @@
     },
     "common-chat-panel": {
       "tags": []
+    },
+    "admin": {
+      "tags": ["type:app"]
+    },
+    "admin-e2e": {
+      "tags": [],
+      "implicitDependencies": ["admin"]
+    },
+    "ng-crud": {
+      "tags": ["type:plugin"]
+    },
+    "ng-crud-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ng-crud"]
     }
   }
 }
