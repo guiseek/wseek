@@ -23,7 +23,12 @@
             "aot": true,
             "assets": [
               "apps/articles/src/favicon.ico",
-              "apps/articles/src/assets"
+              "apps/articles/src/assets",
+              {
+                "glob": "**/*",
+                "input": "libs/common/ui-kit/imgs",
+                "output": "./imgs"
+              }
             ],
             "styles": ["apps/articles/src/styles.scss"],
             "stylePreprocessorOptions": {

@@ -59,10 +59,10 @@ body.theme-default {
   @include angular-material-theme($theme);
 
   // Apply the theme to the Seek Core
-  // @include seek-core-theme($theme);
+  @include seek-core-theme($theme);
 
   // Apply the theme to the user components
-  // @include components-theme($theme);
+  @include components-theme($theme);
 
   // Generate Seek color classes for primary, accent and warn colors
   $palettes: (
@@ -80,10 +80,10 @@ body.theme-dark {
   @include angular-material-theme($dark-theme);
 
   // Apply the theme to the Seek Core
-  // @include seek-core-theme($theme);
+  @include seek-core-theme($dark-theme);
 
   // Apply the theme to the user components
-  @include components-theme($theme);
+  @include components-theme($dark-theme);
 
   // Generate Seek color classes for primary, accent and warn colors
   $palettes: (

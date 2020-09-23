@@ -1,4 +1,4 @@
-import { swSeekAnimations } from './../animations/index';
+import { seekAnimations } from '@swseek/ui-kit';
 import { ArticlesService } from './../services/articles.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 // import { ArticlesFacade, ArticlesService } from '@seekboard/academy/domain';
@@ -9,7 +9,7 @@ import { takeUntil } from 'rxjs/operators';
   selector: 'swseek-academy',
   templateUrl: './academy.component.html',
   styleUrls: ['./academy.component.scss'],
-  animations: swSeekAnimations
+  animations: seekAnimations
 })
 export class AcademyComponent implements OnInit, OnDestroy {
   categories: any[];
@@ -20,7 +20,7 @@ export class AcademyComponent implements OnInit, OnDestroy {
   searchTerm: string;
 
   // Private
-  private _unsubscribeAll: Subject<any>;
+  private _destroy: Subject<void>;
 
   /**
    * Constructor
@@ -33,7 +33,7 @@ export class AcademyComponent implements OnInit, OnDestroy {
     this.searchTerm = '';
 
     // Set the private defaults
-    this._unsubscribeAll = new Subject();
+    this._destroy = new Subject();
   }
 
   // -----------------------------------------------------------------------------------------------------
@@ -46,7 +46,7 @@ export class AcademyComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // Subscribe to categories
     this._academyArticlesService.onCategoriesChanged
-      .pipe(takeUntil(this._unsubscribeAll))
+      .pipe(takeUntil(this._destroy))
       .subscribe((categories) => {
         console.log(categories);
 
@@ -55,7 +55,7 @@ export class AcademyComponent implements OnInit, OnDestroy {
 
     // Subscribe to courses
     this._academyArticlesService.onArticlesChanged
-      .pipe(takeUntil(this._unsubscribeAll))
+      .pipe(takeUntil(this._destroy))
       .subscribe((courses) => {
         this.filteredArticles = this.coursesFilteredByCategory = this.courses = courses;
       });
@@ -66,8 +66,8 @@ export class AcademyComponent implements OnInit, OnDestroy {
    */
   ngOnDestroy(): void {
     // Unsubscribe from all subscriptions
-    this._unsubscribeAll.next();
-    this._unsubscribeAll.complete();
+    this._destroy.next();
+    this._destroy.complete();
   }
 
   // -----------------------------------------------------------------------------------------------------

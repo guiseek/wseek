@@ -8,10 +8,10 @@ import {
   ViewChildren,
   ViewEncapsulation,
 } from '@angular/core';
-import { swSeekAnimations } from './../../animations/index';
 import { ArticleService } from '../../services/article.service';
 import {
-  // SeekPerfectScrollbarDirective,
+  seekAnimations,
+  SeekPerfectScrollbarDirective,
   SeekSidebarService,
 } from '@swseek/ui-kit';
 // ArticleService
@@ -24,7 +24,7 @@ import { takeUntil } from 'rxjs/operators';
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  animations: swSeekAnimations,
+  animations: seekAnimations,
 })
 export class ArticleComponent implements OnInit, OnDestroy, AfterViewInit {
   animationDirection: 'left' | 'right' | 'none';
@@ -32,8 +32,8 @@ export class ArticleComponent implements OnInit, OnDestroy, AfterViewInit {
   articleStepContent: any;
   currentStep: number;
 
-  // @ViewChildren(SeekPerfectScrollbarDirective)
-  // seekScrollbarDirectives: QueryList<SeekPerfectScrollbarDirective>;
+  @ViewChildren(SeekPerfectScrollbarDirective)
+  seekScrollbarDirectives: QueryList<SeekPerfectScrollbarDirective>;
 
   // Private
   private _unsubscribeAll: Subject<any>;
@@ -78,14 +78,14 @@ export class ArticleComponent implements OnInit, OnDestroy, AfterViewInit {
    * After view init
    */
   ngAfterViewInit(): void {
-    // this.articleStepContent = this.seekScrollbarDirectives.find(
-    //   (seekScrollbarDirective) => {
-    //     return (
-    //       seekScrollbarDirective.elementRef.nativeElement.id ===
-    //       'article-step-content'
-    //     );
-    //   }
-    // );
+    this.articleStepContent = this.seekScrollbarDirectives.find(
+      (seekScrollbarDirective) => {
+        return (
+          seekScrollbarDirective.elementRef.nativeElement.id ===
+          'article-step-content'
+        );
+      }
+    );
   }
 
   /**

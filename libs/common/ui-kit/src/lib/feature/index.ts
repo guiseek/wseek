@@ -9,4 +9,6 @@ export * from './services';
 export * from './sidebar';
 export * from './splash-screen';
 export * from './toolbar';
+export * from './footer';
+export * from './quick-panel';
 export * from './seek-logo';

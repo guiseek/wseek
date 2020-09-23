@@ -2,6 +2,9 @@
   "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../../dist/libs/common/util-mock",
   "lib": {
-    "entryFile": "src/index.ts"
+    "entryFile": "src/index.ts",
+    "umdModuleIds": {
+      "angular-in-memory-web-api": "inMemory"
+    }
   }
 }

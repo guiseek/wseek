@@ -1,26 +1,31 @@
 import { SeekConfig } from '@swseek/ui-kit';
 
 export const appConfig: SeekConfig = {
-  // logo: 'assets/images/logos/team.svg',
-  // Color themes can be defined in src/app/app.theme.scss
+  logo: 'imgs/logos/seek.svg',
   colorTheme: 'theme-default',
   customScrollbars: true,
   layout: {
+    style: 'vertical-layout-1',
+    width: 'fullwidth',
     navbar: {
-      // logo: 'assets/images/logos/team-xs.svg',
-      primaryBackground: 'seek-blue-500',
-      secondaryBackground: 'seek-blue-900',
+      primaryBackground: 'seek-navy-700',
+      secondaryBackground: 'seek-navy-900',
+      folded: false,
       hidden: false,
       position: 'left',
       variant: 'vertical-style-1',
     },
     toolbar: {
-      background: 'seek-blue-500',
+      customBackgroundColor: false,
+      background: 'seek-white-500',
       hidden: false,
+      position: 'below-static',
     },
     footer: {
-      background: 'seek-blue-900',
+      customBackgroundColor: true,
+      background: 'seek-navy-900',
       hidden: false,
+      position: 'below-fixed',
     },
     sidepanel: {
       hidden: false,

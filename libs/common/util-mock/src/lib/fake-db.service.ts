@@ -1,3 +1,4 @@
+import { QuickPanelFakeDb } from './data/quick-panel';
 import { Injectable } from '@angular/core';
 import { InMemoryDbService, RequestInfo } from 'angular-in-memory-web-api';
 import { Observable } from 'rxjs';
@@ -18,6 +19,9 @@ export class FakeDbService implements InMemoryDbService {
       'profile-timeline': ProfileFakeDb.timeline,
       'profile-photos-videos': ProfileFakeDb.photosVideos,
       'profile-about': ProfileFakeDb.about,
+      // Quick Panel
+      'quick-panel-notes': QuickPanelFakeDb.notes,
+      'quick-panel-events': QuickPanelFakeDb.events,
       // Icons
       icons: IconsFakeDb.icons,
     };

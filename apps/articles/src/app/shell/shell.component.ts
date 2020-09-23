@@ -1,32 +1,39 @@
+import { navigation } from './../config/app.navigation';
+import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 import {
   SeekConfig,
   SeekConfigService,
+  SeekNavigation,
+  SeekNavigationService,
   SeekSidebarService,
   SeekSplashScreenService,
 } from '@swseek/ui-kit';
-import { Subject } from 'rxjs';
-import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
 
 @Component({
-  selector: 'swseek-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'swseek-shell',
+  templateUrl: './shell.component.html',
+  styleUrls: ['./shell.component.scss'],
 })
-export class AppComponent implements OnInit, OnDestroy {
-  title = 'articles';
-
+export class ShellComponent implements OnInit, OnDestroy {
   private _destroy$ = new Subject<void>();
 
   config: SeekConfig;
+  navigation: SeekNavigation[];
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private _seekConfigService: SeekConfigService,
     private _seekSidebarService: SeekSidebarService,
-    private _splashScreenService: SeekSplashScreenService // private _seekNavigationService: SeekNavigationService
+    private _splashScreenService: SeekSplashScreenService,
+    private _seekNavigationService: SeekNavigationService
   ) {
+    this.navigation = navigation;
+    this._seekNavigationService.register('main', this.navigation);
+    this._seekNavigationService.setCurrentNavigation('main');
+
     this._destroy$ = new Subject();
   }
   ngOnInit(): void {
@@ -36,7 +43,6 @@ export class AppComponent implements OnInit, OnDestroy {
       .subscribe((config) => {
         this.config = config;
         console.log(config);
-
 
         for (let i = 0; i < this.document.body.classList.length; i++) {
           const className = this.document.body.classList[i];
