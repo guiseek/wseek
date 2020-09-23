@@ -1,5 +1,5 @@
 {
-  "name": "@wseek/common/util-mock",
+  "name": "@wseek/chat-panel",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^10.0.14",

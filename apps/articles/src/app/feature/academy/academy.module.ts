@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AcademyComponent } from './academy.component';
-import { CommonUiKitModule, CustomMaterialModule, SeekLogoModule, SeekSidebarModule } from '@swseek/ui-kit';
+import { CommonUiKitModule, CustomMaterialModule, SeekLogoModule, SeekSidebarModule } from '@wseek/ui-kit';
 import { ArticlesService } from '../services/articles.service';
 import { ArticleComponent } from './article/article.component';
 

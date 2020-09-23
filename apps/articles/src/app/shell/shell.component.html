@@ -13,7 +13,7 @@
     [foldedAutoTriggerOnHover]="false"
     lockedOpen="gt-md"
   >
-    <!-- <chat-panel></chat-panel> -->
+    <seek-chat-panel></seek-chat-panel>
   </seek-sidebar>
 </ng-container>
 
@@ -73,7 +73,7 @@
     config.layout.sidepanel.position === 'right'
   "
 >
-  <!-- CHAT PANEL -->
+
   <seek-sidebar
     name="chatPanel"
     position="right"
@@ -83,18 +83,23 @@
     [foldedAutoTriggerOnHover]="false"
     lockedOpen="gt-md"
   >
-    <!-- <seek-chat-panel></seek-chat-panel> -->
+    <seek-chat-panel></seek-chat-panel>
   </seek-sidebar>
-  <!-- / CHAT PANEL -->
+
 </ng-container>
 
 <seek-sidebar name="quickPanel" position="right" class="quick-panel">
   <seek-quick-panel></seek-quick-panel>
 </seek-sidebar>
 
+<ng-template #searchBar>
+  <seek-search-bar></seek-search-bar>
+</ng-template>
+
 <ng-template #toolbar>
   <seek-toolbar
     *ngIf="!config.layout.toolbar.hidden"
+    [searchTmpl]="searchBar"
     [ngClass]="
       config.layout.toolbar.customBackgroundColor === true
         ? config.layout.toolbar.position +

@@ -1,5 +1,5 @@
 {
-  "name": "@swseek/ui-kit",
+  "name": "@wseek/ui-kit",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^10.0.14",

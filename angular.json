@@ -10,7 +10,7 @@
       },
       "root": "apps/articles",
       "sourceRoot": "apps/articles/src",
-      "prefix": "swseek",
+      "prefix": "wseek",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -168,6 +168,13 @@
             "jestConfig": "libs/common/ui-kit/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "release": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "command": "npx semantic-release --dry-run"
+          }
         }
       },
       "schematics": {
@@ -208,6 +215,48 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/common/util-mock/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "common-chat-panel": {
+      "projectType": "library",
+      "root": "libs/common/chat-panel",
+      "sourceRoot": "libs/common/chat-panel/src",
+      "prefix": "seek",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/common/chat-panel/tsconfig.lib.json",
+            "project": "libs/common/chat-panel/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/common/chat-panel/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/chat-panel/tsconfig.lib.json",
+              "libs/common/chat-panel/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/common/chat-panel/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/common/chat-panel/jest.config.js",
             "passWithNoTests": true
           }
         }

@@ -1,3 +1,4 @@
+import { ChatPanelFakeDb } from './data/chat-panel';
 import { QuickPanelFakeDb } from './data/quick-panel';
 import { Injectable } from '@angular/core';
 import { InMemoryDbService, RequestInfo } from 'angular-in-memory-web-api';
@@ -22,6 +23,10 @@ export class FakeDbService implements InMemoryDbService {
       // Quick Panel
       'quick-panel-notes': QuickPanelFakeDb.notes,
       'quick-panel-events': QuickPanelFakeDb.events,
+      // Chat Panel
+      'chat-panel-contacts': ChatPanelFakeDb.contacts,
+      'chat-panel-chats': ChatPanelFakeDb.chats,
+      'chat-panel-user': ChatPanelFakeDb.user,
       // Icons
       icons: IconsFakeDb.icons,
     };

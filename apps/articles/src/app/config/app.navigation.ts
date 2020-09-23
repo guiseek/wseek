@@ -1,4 +1,4 @@
-import { SeekNavigation } from '@swseek/ui-kit';
+import { SeekNavigation } from '@wseek/ui-kit';
 
 export const navigation: SeekNavigation[] = [
   {
@@ -22,7 +22,7 @@ export const navigation: SeekNavigation[] = [
         translate: 'NAV.ACADEMY',
         type: 'item',
         icon: 'school',
-        url: '/apps/academy',
+        url: '/academy',
       },
       {
         id: 'chat',

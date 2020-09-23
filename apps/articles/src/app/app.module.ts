@@ -13,11 +13,13 @@ import {
   SeekNavigationModule,
   SeekProgressBarModule,
   SeekQuickPanelModule,
+  SeekSearchBarModule,
   SeekSidebarModule,
   SeekSplashScreenModule,
   SeekToolbarModule,
-} from '@swseek/ui-kit';
-import { CommonUtilMockModule } from '@swseek/common/util-mock';
+} from '@wseek/ui-kit';
+import { SeekChatPanelModule } from '@wseek/chat-panel';
+import { CommonUtilMockModule } from '@wseek/common/util-mock';
 
 import { appConfig } from './config/app.config';
 import { AppComponent } from './app.component';
@@ -55,9 +57,11 @@ export const routes: Routes = [
     SeekFooterModule,
     SeekNavbarModule,
     SeekToolbarModule,
+    SeekSearchBarModule,
     SeekProgressBarModule,
     SeekSplashScreenModule,
     SeekNavigationModule,
+    SeekChatPanelModule,
     SeekConfigModule.forRoot(appConfig),
 
     CommonUiKitModule,

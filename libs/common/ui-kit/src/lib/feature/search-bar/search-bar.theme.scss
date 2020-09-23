@@ -1,0 +1,9 @@
+@mixin seek-search-bar-theme($theme) {
+  $background: map-get($theme, background);
+
+  .seek-search-bar {
+    &.expanded {
+      background-color: map-get($background, background);
+    }
+  }
+}

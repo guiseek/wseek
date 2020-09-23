@@ -5,12 +5,12 @@ import {
   SeekConfigService,
   SeekSidebarService,
   SeekSplashScreenService,
-} from '@swseek/ui-kit';
+} from '@wseek/ui-kit';
 import { Subject } from 'rxjs';
 import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
 
 @Component({
-  selector: 'swseek-root',
+  selector: 'wseek-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

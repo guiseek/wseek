@@ -13,14 +13,14 @@ import {
   seekAnimations,
   SeekPerfectScrollbarDirective,
   SeekSidebarService,
-} from '@swseek/ui-kit';
+} from '@wseek/ui-kit';
 // ArticleService
 
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'swseek-article',
+  selector: 'wseek-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss'],
   encapsulation: ViewEncapsulation.None,

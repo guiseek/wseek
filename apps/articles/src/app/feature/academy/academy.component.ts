@@ -1,4 +1,4 @@
-import { seekAnimations } from '@swseek/ui-kit';
+import { seekAnimations } from '@wseek/ui-kit';
 import { ArticlesService } from './../services/articles.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 // import { ArticlesFacade, ArticlesService } from '@seekboard/academy/domain';
@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'swseek-academy',
+  selector: 'wseek-academy',
   templateUrl: './academy.component.html',
   styleUrls: ['./academy.component.scss'],
   animations: seekAnimations

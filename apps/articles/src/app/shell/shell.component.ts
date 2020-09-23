@@ -10,10 +10,10 @@ import {
   SeekNavigationService,
   SeekSidebarService,
   SeekSplashScreenService,
-} from '@swseek/ui-kit';
+} from '@wseek/ui-kit';
 
 @Component({
-  selector: 'swseek-shell',
+  selector: 'wseek-shell',
   templateUrl: './shell.component.html',
   styleUrls: ['./shell.component.scss'],
 })

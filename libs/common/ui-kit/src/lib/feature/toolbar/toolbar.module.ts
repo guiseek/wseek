@@ -6,6 +6,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 // import { SeekShortcutsModule } from './../shortcuts/shortcuts.module';
+import { SeekSearchBarModule } from './../search-bar/search-bar.module';
 
 import { SeekToolbarComponent } from './toolbar.component';
 import { CommonUiKitModule } from '../../common-ui-kit.module';
@@ -20,6 +21,7 @@ import { CommonUiKitModule } from '../../common-ui-kit.module';
     MatToolbarModule,
 
     CommonUiKitModule,
+    SeekSearchBarModule
     // SeekShortcutsModule,
   ],
   exports: [SeekToolbarComponent],

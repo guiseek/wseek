@@ -1,8 +1,8 @@
 {
   "extends": "../../tslint.json",
   "rules": {
-    "directive-selector": [true, "attribute", "swseek", "camelCase"],
-    "component-selector": [true, "element", "swseek", "kebab-case"]
+    "directive-selector": [true, "attribute", "wseek", "camelCase"],
+    "component-selector": [true, "element", "wseek", "kebab-case"]
   },
   "linterOptions": {
     "exclude": ["!**/*"]

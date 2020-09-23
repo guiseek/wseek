@@ -1,10 +1,13 @@
-// @import '../components/chat-panel/chat-panel.theme';
+@import 'libs/common/chat-panel/src/lib/chat-panel.theme';
 @import 'feature/toolbar/toolbar.theme';
+@import 'feature/search-bar/search-bar.theme';
 @import '../feature/academy/academy.theme';
 
 @mixin components-theme($theme) {
   @include toolbar-theme($theme);
   @include academy-theme($theme);
+  @include chat-panel-theme($theme);
+  @include seek-search-bar-theme($theme);
 }
 
 // @import 'theming/toolbar.theme';

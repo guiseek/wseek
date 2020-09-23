@@ -60,9 +60,11 @@
         </button>
       </mat-menu>
 
-      <div class="toolbar-separator"></div>
-
-      <!-- <seek-search-bar (input)="search($event)"></seek-search-bar> -->
+      <ng-container *ngIf="searchTmpl">
+        <div class="toolbar-separator"></div>
+        <ng-container *ngTemplateOutlet="searchTmpl"></ng-container>
+        <!-- <seek-search-bar (input)="search($event)"></seek-search-bar> -->
+      </ng-container>
 
       <!-- <div class="toolbar-separator"></div>
 

@@ -9,6 +9,7 @@ import {
   OnDestroy,
   OnInit,
   Output,
+  TemplateRef,
   ViewEncapsulation,
 } from '@angular/core';
 import { Subject } from 'rxjs';
@@ -29,6 +30,9 @@ export class SeekToolbarComponent implements OnInit, OnDestroy {
   navigation: any;
   selectedLanguage: any;
   userStatusOptions: any[];
+
+  @Input() searchTmpl: TemplateRef<HTMLElement>;
+
   @Input() userDisplayName: string;
   @Input() userPhotoURL: string;
 

@@ -1,4 +1,4 @@
-import { SeekConfig } from '@swseek/ui-kit';
+import { SeekConfig } from '@wseek/ui-kit';
 
 export const appConfig: SeekConfig = {
   logo: 'imgs/logos/seek.svg',

@@ -16,8 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@swseek/ui-kit": ["libs/common/ui-kit/src/index.ts"],
-      "@swseek/common/util-mock": ["libs/common/util-mock/src/index.ts"]
+      "@wseek/ui-kit": ["libs/common/ui-kit/src/index.ts"],
+      "@wseek/common/util-mock": ["libs/common/util-mock/src/index.ts"],
+      "@wseek/chat-panel": ["libs/common/chat-panel/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,5 +1,5 @@
 {
-  "npmScope": "swseek",
+  "npmScope": "wseek",
   "affected": {
     "defaultBase": "master"
   },
@@ -33,6 +33,9 @@
       "tags": ["type:ui"]
     },
     "common-util-mock": {
+      "tags": []
+    },
+    "common-chat-panel": {
       "tags": []
     }
   }
