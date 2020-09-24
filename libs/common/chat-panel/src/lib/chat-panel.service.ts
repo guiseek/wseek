@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { SeekUtils } from './seek-utils';
+import { DataUtils } from '@wseek/global/util-mapper';
 
 @Injectable()
 export class ChatPanelService {
@@ -77,7 +77,7 @@ export class ChatPanelService {
   createNewChat(contactId): Promise<any> {
     return new Promise((resolve, reject) => {
       // Generate a new id
-      const chatId = SeekUtils.generateGUID();
+      const chatId = DataUtils.generateGUID();
 
       // Prepare the chat object
       const chat = {

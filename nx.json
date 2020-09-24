@@ -54,6 +54,9 @@
     },
     "server": {
       "tags": ["type:app"]
+    },
+    "global-util-mapper": {
+      "tags": ["type:util", "scope:global"]
     }
   }
 }
