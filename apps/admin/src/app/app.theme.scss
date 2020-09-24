@@ -1,0 +1,96 @@
+// ------ - ------ - ------ //
+// Typography styles
+// ------ - ------ - ------ //
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+
+$typography: mat-typography-config(
+  $font-family: '\'Montserrat\', sans-serif',
+  $title: mat-typography-level(20px, 32px, 600),
+  $body-2: mat-typography-level(14px, 24px, 600),
+  $button: mat-typography-level(14px, 14px, 600),
+  $input: mat-typography-level(16px, 1.125, 400)
+);
+// Setup the typography
+@include angular-material-typography($typography);
+
+
+// ------ - ------ - ------ //
+// Colors / Palette / Theme
+// ------ - ------ - ------ //
+@import 'theme/components';
+@import 'theme/colors';
+
+// Colors
+// Generate Seek color classes for custom palettes
+$custom_palettes: (
+  seek-white: $seek-white,
+  seek-black: $seek-black,
+  seek-blue: $seek-blue,
+  seek-navy: $seek-navy,
+);
+
+@include seek-color-classes($custom_palettes);
+
+// Palette
+$default-primary-palette: mat-palette($seek-navy);
+$default-accent-palette: mat-palette($mat-light-blue, 600, 400, 700);
+$default-warn-palette: mat-palette($mat-red);
+
+$dark-primary-palette: mat-palette($seek-dark);
+$dark-accent-palette: mat-palette($seek-blue, 600, 400, 700);
+$dark-warn-palette: mat-palette($mat-red);
+
+// Theme
+// Create the Material theme object
+$theme: mat-light-theme(
+  $default-primary-palette,
+  $default-accent-palette,
+  $default-warn-palette
+);
+
+$dark-theme: mat-dark-theme(
+  $dark-primary-palette,
+  $dark-accent-palette,
+  $dark-warn-palette
+);
+
+body.theme-default {
+  // Create an Angular Material theme from the $theme map
+  @include angular-material-theme($theme);
+
+  // Apply the theme to the Seek Core
+  @include seek-core-theme($theme);
+
+  // Apply the theme to the user components
+  @include components-theme($theme);
+
+  // Generate Seek color classes for primary, accent and warn colors
+  $palettes: (
+    primary: $default-primary-palette,
+    accent: $default-accent-palette,
+    warn: $default-warn-palette,
+  );
+
+  @include seek-color-classes($palettes);
+}
+
+
+body.theme-dark {
+  // Create an Angular Material theme from the $theme map
+  @include angular-material-theme($dark-theme);
+
+  // Apply the theme to the Seek Core
+  @include seek-core-theme($dark-theme);
+
+  // Apply the theme to the user components
+  @include components-theme($dark-theme);
+
+  // Generate Seek color classes for primary, accent and warn colors
+  $palettes: (
+    primary: $dark-primary-palette,
+    accent: $dark-accent-palette,
+    warn: $dark-warn-palette,
+  );
+
+  @include seek-color-classes($palettes);
+}
