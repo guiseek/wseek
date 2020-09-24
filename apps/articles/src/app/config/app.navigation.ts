@@ -45,27 +45,6 @@ export const navigation: SeekNavigation[] = [
         icon: 'account_box',
         url: '/apps/contacts',
       },
-      {
-        id: 'to-do',
-        title: 'Pendentes',
-        translate: 'NAV.TODO',
-        type: 'item',
-        icon: 'check_box',
-        url: '/apps/todo',
-        badge: {
-          title: '3',
-          bg: '#f74b2d',
-          fg: '#ffffff',
-        },
-      },
-      {
-        id: 'scrumboard',
-        title: 'Scrumboard',
-        translate: 'NAV.SCRUMBOARD',
-        type: 'item',
-        icon: 'assessment',
-        url: '/apps/scrumboard',
-      },
     ],
   },
 ];
