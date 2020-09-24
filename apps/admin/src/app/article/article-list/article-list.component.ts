@@ -4,7 +4,7 @@ import { ArticleService } from '../article.service';
 import { Article } from '../article';
 
 @Component({
-  selector: 'app-article',
+  selector: 'wseek-article',
   templateUrl: 'article-list.component.html'
 })
 export class ArticleListComponent implements OnInit {

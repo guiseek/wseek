@@ -7,7 +7,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Component({
-  selector: 'app-article-edit',
+  selector: 'wseek-article-edit',
   templateUrl: './article-edit.component.html'
 })
 export class ArticleEditComponent implements OnInit {

@@ -51,6 +51,9 @@
     "ng-crud-e2e": {
       "tags": [],
       "implicitDependencies": ["ng-crud"]
+    },
+    "server": {
+      "tags": ["type:app"]
     }
   }
 }

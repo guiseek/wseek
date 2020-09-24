@@ -1,6 +1,6 @@
 {
   "name": "wseek",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "nx",
@@ -43,11 +43,31 @@
     "@angular/platform-browser": "^10.0.0",
     "@angular/platform-browser-dynamic": "^10.0.0",
     "@angular/router": "^10.0.0",
+    "@nestjs/common": "^7.0.0",
+    "@nestjs/config": "^0.5.0",
+    "@nestjs/core": "^7.0.0",
+    "@nestjs/jwt": "^7.1.0",
+    "@nestjs/mongoose": "^7.0.2",
+    "@nestjs/passport": "^7.1.0",
+    "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/swagger": "^4.6.1",
     "@nrwl/angular": "10.2.1",
+    "bcrypt": "^5.0.0",
+    "class-transformer": "^0.3.1",
+    "helmet": "^4.1.1",
     "lodash": "^4.17.20",
+    "mongoose": "^5.10.6",
+    "mongoose-autopopulate": "^0.12.2",
+    "mongoose-lean-virtuals": "^0.6.9",
+    "nestjsx-automapper": "^3.1.3",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
     "perfect-scrollbar": "^1.5.0",
     "prismjs": "^1.21.0",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.5",
+    "swagger-ui-express": "^4.1.4",
     "tslib": "^2.0.0",
     "zone.js": "^0.10.2"
   },
@@ -60,18 +80,25 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-angular": "^8.3.4",
     "@commitlint/config-conventional": "^8.3.4",
+    "@nestjs/schematics": "^7.0.0",
+    "@nestjs/testing": "^7.0.0",
     "@nrwl/cypress": "10.2.1",
     "@nrwl/eslint-plugin-nx": "10.2.1",
     "@nrwl/jest": "10.2.1",
     "@nrwl/nest": "^10.2.1",
+    "@nrwl/node": "10.2.1",
     "@nrwl/nx-plugin": "^10.2.1",
     "@nrwl/workspace": "10.2.1",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
+    "@typegoose/typegoose": "^7.4.1",
     "@types/jest": "26.0.8",
     "@types/lodash": "^4.14.161",
+    "@types/mongoose": "^5.7.36",
+    "@types/mongoose-lean-virtuals": "^0.5.1",
     "@types/node": "~8.9.4",
+    "@types/passport-jwt": "^3.0.3",
     "@types/perfect-scrollbar": "^1.3.0",
     "@types/prismjs": "^1.16.1",
     "@typescript-eslint/eslint-plugin": "2.19.2",
@@ -80,6 +107,7 @@
     "codelyzer": "~5.0.1",
     "commitizen": "^4.1.2",
     "cypress": "^4.1.0",
+    "cz-customizable": "^6.3.0",
     "dotenv": "6.2.0",
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.0.0",
@@ -94,5 +122,18 @@
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
     "typescript": "~3.9.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-config.js"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
   }
 }
