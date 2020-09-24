@@ -1,0 +1,56 @@
+@import 'libs/common/chat-panel/src/lib/chat-panel.theme';
+@import 'feature/toolbar/toolbar.theme';
+@import 'feature/search-bar/search-bar.theme';
+@import '../article/article.theme';
+
+@mixin components-theme($theme) {
+  @include toolbar-theme($theme);
+  @include article-theme($theme);
+  @include chat-panel-theme($theme);
+  @include seek-search-bar-theme($theme);
+}
+
+// @import 'theming/toolbar.theme';
+// @import 'theming/contacts.theme';
+// @import 'theming/mail.theme';
+// @import 'theming/auth.theme';
+// @import 'theming/chat.theme';
+// @import 'theming/orders.theme';
+// @import 'theming/products.theme';
+// @import 'theming/academy.theme';
+// @import 'theming/calendar.theme';
+// @import 'theming/todo.theme';
+// @import 'theming/scrumboard.theme';
+// @import 'theming/file-manager.theme';
+// @import 'theming/profile.theme';
+// @import 'theming/search-classic.theme';
+// @import 'theming/search-modern.theme';
+
+
+// @mixin components-theme($theme) {
+//   @include toolbar-theme($theme);
+
+//   @include contacts-theme($theme);
+//   @include mail-theme($theme);
+//   @include chat-theme($theme);
+//   @include auth-theme($theme);
+
+//   @include e-commerce-orders-theme($theme);
+//   @include e-commerce-products-theme($theme);
+
+//   @include academy-theme($theme);
+
+//   @include calendar-theme($theme);
+//   @include todo-theme($theme);
+
+//   @include scrumboard-theme($theme);
+
+//   @include file-manager-theme($theme);
+
+//   @include profile-theme($theme);
+
+//   @include search-classic-theme($theme);
+//   @include search-modern-theme($theme);
+
+//   // @include seek-pages($theme);
+// }

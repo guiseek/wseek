@@ -7,11 +7,13 @@ import {
   ViewEncapsulation,
   OnDestroy,
   ViewChild,
+  Input,
 } from '@angular/core';
 import { Subject } from 'rxjs';
-import { SeekConfigService } from '../../config';
+import { SeekConfig, SeekConfigService } from '../../config';
 import { SeekSidebarService } from '../../sidebar';
 import { delay, takeUntil, filter, take } from 'rxjs/operators';
+import { SeekNavigation } from '../../navigation';
 
 @Component({
   selector: 'seek-navbar-vertical',
@@ -20,8 +22,10 @@ import { delay, takeUntil, filter, take } from 'rxjs/operators';
   encapsulation: ViewEncapsulation.None,
 })
 export class SeekNavbarVerticalComponent implements OnInit, OnDestroy {
-  seekConfig: any;
-  navigation: any;
+  @Input() src = '/imgs/logos/seek.svg';
+
+  seekConfig: SeekConfig;
+  navigation: SeekNavigation;
 
   // Private
   private _seekPerfectScrollbar: SeekPerfectScrollbarDirective;
@@ -103,8 +107,11 @@ export class SeekNavbarVerticalComponent implements OnInit, OnDestroy {
     // Subscribe to the config changes
     this._seekConfigService.config
       .pipe(takeUntil(this._unsubscribeAll))
-      .subscribe((config) => {
+      .subscribe((config: SeekConfig) => {
         this.seekConfig = config;
+        if (config.layout.navbar.logo) {
+          this.src = config.layout.navbar.logo;
+        }
       });
 
     // Get current navigation

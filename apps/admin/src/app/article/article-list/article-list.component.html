@@ -1,47 +1,173 @@
-<ol class="breadcrumb float-right">
-  <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-  <li class="breadcrumb-item active">Artigo</li>
-</ol>
-<div class="card">
-  <div class="header">
-    <h2 class="title">Artigo List</h2>
-  </div>
-  <div class="content">
-    <form #f="ngForm">
-      
-      <button (click)="search()" [disabled]="!f?.valid" class="btn btn-primary">Search</button>
-      <a [routerLink]="['../articles', 'new' ]" class="btn btn-default">New</a>
-    </form>
-  </div>
-</div>
-<div class="card" *ngIf="articleList.length > 0">
-  <div *ngIf="feedback" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
-  <div class="table-responsive">
-    <table class="table table-centered table-hover mb-0" id="datatable">
-      <thead>
-        <tr>
-          <th class="border-top-0" scope="col">Id</th>
-          <th class="border-top-0" scope="col">Título</th>
-          <th class="border-top-0" scope="col">Resumo</th>
-          <th class="border-top-0" scope="col">Conteúdo</th>
-          <th class="border-top-0" scope="col">Stars</th>
-          <th class="border-top-0" scope="col" style="width:120px"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of articleList" [class.active]="item === selectedArticle">
-        
-          <td>{{item.id}}</td>
-          <td>{{item.title}}</td>
-          <td>{{item.resume}}</td>
-          <td>{{item.content}}</td>
-          <td>{{item.stars}}</td>
-          <td style="white-space: nowrap">
-            <a [routerLink]="['../articles', item.id ]" class="btn btn-secondary">Edit</a>&nbsp;
-            <button (click)="delete(item)" class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<div id="articles" class="page-layout carded fullwidth inner-scroll">
+  <div class="top-bg accent"></div>
+
+  <div class="center">
+    <div
+      class="header accent"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      fxLayout.gt-sm="row"
+      fxLayoutAlign.gt-sm="space-between center"
+    >
+      <div
+        class="logo mb-24 mb-md-0"
+        fxLayout="row"
+        fxLayoutAlign="start center"
+      >
+        <mat-icon
+          class="logo-icon s-32 mr-16"
+          [@animate]="{ value: '*', params: { delay: '50ms', scale: '0.2' } }"
+        >
+          article
+        </mat-icon>
+        <span
+          class="logo-text h1"
+          [@animate]="{ value: '*', params: { delay: '100ms', x: '-25px' } }"
+        >
+          Artigos
+        </span>
+      </div>
+
+      <div class="search-wrapper mx-32 mx-md-0">
+        <div class="search" fxFlex fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon>search</mat-icon>
+          <input #filter placeholder="Encontre um artigo" />
+        </div>
+      </div>
+
+      <a
+        mat-raised-button
+        [routerLink]="['../articles', 'new' ]"
+        class="add-article-button seek-white mt-24 mt-md-0"
+      >
+        <span>Criar um novo artigo</span>
+      </a>
+    </div>
+
+    <div class="content-card">
+      <mat-table
+        class="articles-table"
+        #table
+        [dataSource]="dataSource"
+        matSort
+        [@animateStagger]="{ value: '50' }"
+        seekPerfectScrollbar
+      >
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >ID</mat-header-cell
+          >
+          <mat-cell *matCellDef="let article">
+            <p class="text-truncate">{{ article.id }}</p>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="image">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let article">
+            <img
+              class="article-image"
+              *ngIf="article.featuredImageId"
+              [alt]="article.name"
+              [src]="article.image[article.featuredImageId].url"
+            />
+            <img
+              *ngIf="!article.featuredImageId"
+              [src]="'assets/images/ecommerce/article-image-placeholder.png'"
+            />
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="headline">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Título</mat-header-cell
+          >
+          <mat-cell *matCellDef="let article">
+            <p class="text-truncate">{{ article.headline }}</p>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="tags">
+          <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md
+            >Tags</mat-header-cell
+          >
+          <mat-cell *matCellDef="let article" fxHide fxShow.gt-md>
+            <p class="category text-truncate">
+              {{ article.tags[0] }}
+            </p>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="dateModified">
+          <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs
+            >Título</mat-header-cell
+          >
+          <mat-cell *matCellDef="let article" fxHide fxShow.gt-xs>
+            <p class="price text-truncate">
+              {{ article.dateModified | date: 'shortdate' }}
+            </p>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="claps">
+          <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm
+            >Visualizações</mat-header-cell
+          >
+          <mat-cell *matCellDef="let article" fxHide fxShow.gt-sm>
+            <span
+              class="quantity-indicator text-truncate"
+              [ngClass]="{
+                'red-500': article.claps <= 5,
+                'amber-500': article.claps > 5 && article.claps <= 25,
+                'green-600': article.claps > 25
+              }"
+            >
+            </span>
+            <span>
+              {{ article.quantity }}
+            </span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="datePublished">
+          <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs
+            >Publicado</mat-header-cell
+          >
+          <mat-cell *matCellDef="let article" fxHide fxShow.gt-xs>
+            <mat-icon
+              *ngIf="article.datePublished"
+              class="active-icon green-600 s-16"
+              >check</mat-icon
+            >
+            <mat-icon
+              *ngIf="!article.datePublished"
+              class="active-icon red-500 s-16"
+              >close</mat-icon
+            >
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row
+          *matHeaderRowDef="displayedColumns; sticky: true"
+        ></mat-header-row>
+
+        <mat-row
+          *matRowDef="let article; columns: displayedColumns"
+          class="article"
+          matRipple
+          [routerLink]="'/articles/' + article.id"
+        >
+        </mat-row>
+      </mat-table>
+
+      <mat-paginator
+        #paginator
+        [length]="dataSource.filteredData.length"
+        [pageIndex]="0"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+      >
+      </mat-paginator>
+    </div>
   </div>
 </div>
