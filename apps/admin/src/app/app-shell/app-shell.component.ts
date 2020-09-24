@@ -42,8 +42,6 @@ export class AppShellComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this._destroy$))
       .subscribe((config) => {
         this.config = config;
-        console.log(config);
-
         for (let i = 0; i < this.document.body.classList.length; i++) {
           const className = this.document.body.classList[i];
 
@@ -60,7 +58,7 @@ export class AppShellComponent implements OnInit, OnDestroy {
     this._destroy$.complete();
   }
 
-  toggleSidebarOpen(key): void {
+  toggleSidebarOpen(key: string): void {
     this._seekSidebarService.getSidebar(key).toggleOpen();
   }
 }

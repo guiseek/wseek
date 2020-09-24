@@ -9,7 +9,7 @@ import { RoleService } from './role.service';
 @Module({
   controllers: [RoleController],
   imports: [
-    // AutomapperModule.withMapper(),
+    AutomapperModule.withMapper(),
     MongooseModule.forFeature([{ name: Role.modelName, schema: Role.schema }])
   ],
   providers: [RoleService],

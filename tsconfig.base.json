@@ -20,7 +20,9 @@
       "@wseek/common/util-mock": ["libs/common/util-mock/src/index.ts"],
       "@wseek/chat-panel": ["libs/common/chat-panel/src/index.ts"],
       "@wseek/ng-crud": ["libs/ng/crud/src/index.ts"],
-      "@wseek/global/util-mapper": ["libs/global/util-mapper/src/index.ts"]
+      "@wseek/global/util-mapper": ["libs/global/util-mapper/src/index.ts"],
+      "@wseek/ui-auth": ["libs/common/ui-auth/src/index.ts"],
+      "@wseek/global/util-auth": ["libs/global/util-auth/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
