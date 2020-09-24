@@ -9,20 +9,19 @@ import { ArticleModule } from './article/article.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    ArticleModule,
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'articles'
-      },
-      // {
-      //   path: '',
-      //   loadChildren: () => import('./article/article.module').then((m) => m.ArticleModule)
-      // }
-    ], { initialNavigation: 'enabled' }),
-    ArticleModule,
+    RouterModule.forRoot(
+      [
+        {
+          path: '',
+          pathMatch: 'full',
+          redirectTo: 'articles',
+        },
+      ],
+      { initialNavigation: 'enabled' }
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent],
