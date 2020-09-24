@@ -19,7 +19,8 @@
       "@wseek/ui-kit": ["libs/common/ui-kit/src/index.ts"],
       "@wseek/common/util-mock": ["libs/common/util-mock/src/index.ts"],
       "@wseek/chat-panel": ["libs/common/chat-panel/src/index.ts"],
-      "@wseek/ng-crud": ["libs/ng/crud/src/index.ts"]
+      "@wseek/ng-crud": ["libs/ng/crud/src/index.ts"],
+      "@wseek/global/util-mapper": ["libs/global/util-mapper/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

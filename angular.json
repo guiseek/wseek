@@ -523,6 +523,41 @@
           }
         }
       }
+    },
+    "global-util-mapper": {
+      "root": "libs/global/util-mapper",
+      "sourceRoot": "libs/global/util-mapper/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/global/util-mapper/tsconfig.lib.json",
+              "libs/global/util-mapper/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/global/util-mapper/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/global/util-mapper/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/global/util-mapper",
+            "tsConfig": "libs/global/util-mapper/tsconfig.lib.json",
+            "packageJson": "libs/global/util-mapper/package.json",
+            "main": "libs/global/util-mapper/src/index.ts",
+            "assets": ["libs/global/util-mapper/*.md"]
+          }
+        }
+      }
     }
   },
   "cli": {
