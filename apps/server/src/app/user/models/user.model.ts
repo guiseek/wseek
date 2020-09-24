@@ -2,11 +2,11 @@ import { plugin, Ref } from '@typegoose/typegoose';
 import * as autopopulate from 'mongoose-autopopulate';
 import * as leanVirtuals from 'mongoose-lean-virtuals';
 import { Role } from '../../role/models/role.model';
-import { BaseModel } from '../../shared/base.model';
 import {
+  BaseModel,
   ExposedProp,
   AutoMapProp,
-} from '../../shared/decorators/typegoose.decorators';
+} from '../../shared';
 
 @plugin(autopopulate)
 @plugin(leanVirtuals)

@@ -3,7 +3,7 @@ import { Role } from '../models/role.model';
 import { RoleVm } from '../view-models/role.vm';
 
 @Profile()
-class RoleProfile extends ProfileBase {
+export class RoleProfile extends ProfileBase {
   constructor(mapper: AutoMapper) {
     super();
     mapper
@@ -17,16 +17,5 @@ class RoleProfile extends ProfileBase {
         (s) => s.permissions,
         mapFrom((src) => src.permissions)
       );
-    // mapper
-    //   .createMap(Role, RoleVm)
-    //   .forMember(
-    //     d => d.permissions,
-    //     opts => opts.mapFrom(s => s.permissions)
-    //   )
-    //   .reverseMap()
-    //   .forPath(
-    //     s => s.permissions,
-    //     opts => opts.mapFrom(d => d.permissions)
-    //   );
   }
 }

@@ -11,7 +11,6 @@ import {
   SchematicContext,
   SchematicsException,
   applyTemplates,
-  template,
   Tree,
   url,
 } from '@angular-devkit/schematics';
@@ -25,15 +24,11 @@ import { CrudModel } from './model';
 
 import { getWorkspace } from '@schematics/angular/utility/config';
 import { parseName } from '@schematics/angular/utility/parse-name';
+import { capitalize } from '@angular-devkit/core/src/utils/strings';
 import {
   addModuleImportToModule,
   findModuleFromOptions,
 } from 'schematics-utilities';
-import { capitalize } from '@angular-devkit/core/src/utils/strings';
-import { readJsonFile } from '@nrwl/workspace';
-import { join } from 'path';
-
-
 
 function setupOptions(options: MenuOptions, host: Tree): void {
   const workspace = getWorkspace(host);
@@ -59,18 +54,13 @@ export default function (options: MenuOptions): Rule {
     setupOptions(options, host);
     options.module = findModuleFromOptions(host, options) || '';
 
-    // console.log(options);
     const [root, ...relative] = options.path.split('/');
-
-    const modelFile = `${relative.join('/')}/${options.model}.json`;
-    // const modelFile = `${options.path}/${options.name}/${options.model}`;
+    const modelFile = `${relative.join('/')}/${options.model}`;
     const modelBuffer = host.read(modelFile);
 
-    // const json = readJsonFile('./article.json')
-    // console.log(modelFile, modelBuffer);
-
-
     if (modelBuffer === null) {
+      console.info('path: ', modelFile);
+
       throw new SchematicsException(
         `Model file ${options.model} does not exist.`
       );

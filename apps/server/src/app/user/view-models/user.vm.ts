@@ -1,5 +1,4 @@
-import { BaseVm } from '../../shared/base.model';
-import { ExposedApiProperty } from '../../shared/decorators/swagger.decorators';
+import { BaseVm, ExposedApiProperty } from '../../shared';
 
 export class UserVm extends BaseVm {
   @ExposedApiProperty()

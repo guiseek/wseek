@@ -2,11 +2,12 @@ import { Controller, Get, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiBearerAuth, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { AutoMapper, InjectMapper } from 'nestjsx-automapper';
-import { Permissions } from '../shared/decorators/permissions.decorator';
+import {  } from '../shared/decorators';
 import {
   ApiErrors,
-  ApiOperationId
-} from '../shared/decorators/swagger.decorators';
+  ApiOperationId,
+  Permissions,
+} from '../shared/decorators';
 import { PermissionsGuard } from '../shared/guards/permissions.guard';
 import { PermissionPrivilege } from '../shared/permission.enum';
 import { User } from './models/user.model';

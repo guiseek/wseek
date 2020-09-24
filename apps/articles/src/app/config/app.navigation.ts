@@ -9,14 +9,6 @@ export const navigation: SeekNavigation[] = [
     icon: 'apps',
     children: [
       {
-        id: 'calendar',
-        title: 'Calendário',
-        translate: 'NAV.CALENDAR',
-        type: 'item',
-        icon: 'today',
-        url: '/apps/calendar',
-      },
-      {
         id: 'academy',
         title: 'Educacional',
         translate: 'NAV.ACADEMY',
@@ -44,27 +36,6 @@ export const navigation: SeekNavigation[] = [
         type: 'item',
         icon: 'account_box',
         url: '/apps/contacts',
-      },
-      {
-        id: 'to-do',
-        title: 'Pendentes',
-        translate: 'NAV.TODO',
-        type: 'item',
-        icon: 'check_box',
-        url: '/apps/todo',
-        badge: {
-          title: '3',
-          bg: '#f74b2d',
-          fg: '#ffffff',
-        },
-      },
-      {
-        id: 'scrumboard',
-        title: 'Scrumboard',
-        translate: 'NAV.SCRUMBOARD',
-        type: 'item',
-        icon: 'assessment',
-        url: '/apps/scrumboard',
       },
     ],
   },

@@ -1,9 +1,8 @@
-import { BaseVm } from '../../shared/base.model';
+import { BaseVm, PermissionDictionary } from '../../shared';
 import {
   ExposedApiProperty,
-  ExposedApiPropertyOptional
-} from '../../shared/decorators/swagger.decorators';
-import { PermissionDictionary } from '../../shared/permission.types';
+  ExposedApiPropertyOptional,
+} from '../../shared/decorators';
 
 export class RoleVm extends BaseVm {
   @ExposedApiProperty()

@@ -1,7 +1,8 @@
-import { environment } from './../environments/environment';
+import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AutomapperModule } from 'nestjsx-automapper';
-import { Module } from '@nestjs/common';
+
+import { environment } from './../environments/environment';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';

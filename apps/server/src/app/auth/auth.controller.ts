@@ -3,7 +3,7 @@ import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
 import {
   ApiErrors,
   ApiOperationId
-} from '../shared/decorators/swagger.decorators';
+} from '../shared/decorators';
 import { AuthService } from './auth.service';
 import { LoginParamsVm } from './view-models/login-params.vm';
 import { LoginResultVm } from './view-models/login-result.vm';

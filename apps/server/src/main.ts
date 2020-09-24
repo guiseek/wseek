@@ -9,7 +9,7 @@ import { environment } from './environments/environment';
 import { HttpExceptionFilter } from './app/shared/filters/http-exception.filter';
 
 async function bootstrap() {
-  const logger = new Logger('NestApplication');
+  const logger = new Logger('SeekServer');
 
   const app = await NestFactory.create(AppModule);
 
@@ -17,6 +17,7 @@ async function bootstrap() {
   app.use(helmet());
 
   const { title, description, contact, version } = environment.swagger;
+
   const swaggerOptions = new DocumentBuilder()
     .setTitle(title)
     .setDescription(description)
@@ -31,16 +32,18 @@ async function bootstrap() {
     .addBearerAuth({ type: 'apiKey', in: 'header', name: 'Authorization' })
     .build();
 
+  const globalPrefix = 'api';
+  const swaggerPrefix = 'docs';
+
   const swaggerDoc = SwaggerModule.createDocument(app, swaggerOptions);
-  SwaggerModule.setup('docs', app, swaggerDoc, {
+  SwaggerModule.setup(swaggerPrefix, app, swaggerDoc, {
     swaggerOptions: {
       docExpansion: 'none',
       filter: true,
       showRequestDuration: true,
     },
   });
-
-  const globalPrefix = 'api';
+  logger.log('Swagger UP');
 
   app.setGlobalPrefix(globalPrefix);
   app.useGlobalFilters(new HttpExceptionFilter());
@@ -48,6 +51,7 @@ async function bootstrap() {
   const port = process.env.PORT || 3333;
   await app.listen(port, () => {
     logger.log('Listening at http://localhost:' + port + '/' + globalPrefix);
+    logger.log('API Docs at http://localhost:' + port + '/' + swaggerPrefix);
   });
 }
 

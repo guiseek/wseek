@@ -15,8 +15,8 @@ export const environment = {
     salt: 10
   },
   swagger: {
-    title: 'NestJS Auth Example',
-    description: 'NestJS Auth Example API Documentation',
+    title: 'SeekServer NestJS Auth Base',
+    description: 'Auth API Documentation',
     version: '1.0.0',
     contact: {
       name: 'Gui Seek',
