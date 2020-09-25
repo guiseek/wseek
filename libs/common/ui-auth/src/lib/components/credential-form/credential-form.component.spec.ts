@@ -3,6 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CredentialFormComponent } from './credential-form.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import * as axe from 'axe-core';
+
 
 describe('CredentialFormComponent', () => {
   let component: CredentialFormComponent;
@@ -52,5 +54,35 @@ describe('CredentialFormComponent', () => {
     component.submit();
 
     expect(component.submitted.emit).toHaveBeenCalledWith(credentials);
+  });
+
+  it('should a11y ok', () => {
+    axe.configure({
+      locale: {
+        lang: 'pt-br',
+        rules: {
+
+          // accesskeys: {
+          //   help: 'Der Wert des accesskey-Attributes muss einzigartig sein.'
+          // }
+          // ...
+        },
+        checks: {
+
+          // 'aria-errormessage': {
+          //   pass: {
+          //     a: ''
+          //   },
+          //   // Note: doT (https://github.com/olado/dot) templates are supported here.
+          //   fail:
+          //     {
+
+          //     }
+          // }
+          // ...
+        }
+      }
+    })
+    expect(component).toBeTruthy();
   });
 });
