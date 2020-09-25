@@ -1,12 +1,12 @@
 <div id="academy-articles" class="page-layout simple">
   <!-- HEADER -->
-  <div
+  <!-- <div
     class="header accent p-16 p-sm-24"
     fxLayout="column"
     fxLayoutAlign="center center"
   >
     <div class="hero-text">
-      <!-- <mat-icon class="hero-icon">school</mat-icon> -->
+      <mat-icon class="hero-icon">school</mat-icon>
       <seek-logo class="hero-icon"></seek-logo>
       <h1 [@animate]="{ value: '*', params: { delay: '100ms', y: '25px' } }">
         WELCOME TO ACADEMY
@@ -16,7 +16,7 @@
         application, or adding a new feature to an existing application.
       </h3>
     </div>
-  </div>
+  </div> -->
   <!-- / HEADER -->
 
   <!-- CONTENT -->
@@ -34,10 +34,10 @@
           floatLabel="always"
           class="article-search"
         >
-          <mat-label>Search for a article</mat-label>
+          <mat-label>Encontre um artigo</mat-label>
           <input
             matInput
-            placeholder="Enter a keyword..."
+            placeholder="O que te interessa?"
             [(ngModel)]="searchTerm"
             (input)="filterArticlesByTerm()"
           />

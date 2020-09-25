@@ -22,11 +22,12 @@ module.exports = {
     { name: 'server', description: 'anything Server specific' },
     { name: 'ui-kit', description: 'anything UiKit specific' },
     { name: 'chat-panel', description: 'anything ChatPanel specific' },
-    { name: 'ng-crud', description: 'anything NgCrud specific' },
+    { name: 'ngex-crud', description: 'anything NgCrud specific' },
     { name: 'docs', description: 'anything related to docs infrastructure' },
     {
       name: 'testing',
-      description: 'anything testing specific (e.g., jest, cypress or util-mock)',
+      description:
+        'anything testing specific (e.g., jest, cypress or util-mock)',
     },
     {
       name: 'repo',
@@ -41,26 +42,25 @@ module.exports = {
   ticketNumberRegExp: '\\d{1,5}',
 
   // it needs to match the value for field type. Eg.: 'fix'
-  /*
-    scopeOverrides: {
-      fix: [
-        {name: 'merge'},
-        {name: 'style'},
-        {name: 'e2eTest'},
-        {name: 'unitTest'}
-      ]
-    },
-    */
+  scopeOverrides: {
+    fix: [
+      { name: 'merge' },
+      { name: 'style' },
+      { name: 'e2eTest' },
+      { name: 'unitTest' },
+    ],
+  },
   // override the messages, defaults are as follows
   messages: {
-    type: "Selecione o tipo de alteração que você está enviando:",
+    type: 'Selecione o tipo de alteração que você está enviando:',
     scope: '\nIndique o ESCOPO desta alteração (opcional):',
     // used if allowCustomScopes is true
     customScope: 'Indique o escopo desta alteração:',
     subject: 'Escreva uma descrição CURTA e IMPERATIVA da mudança:\n',
     body:
       'Forneça uma descrição mais detalhada da alteração (optional). Use "|" para quebras de linha:\n',
-    breaking: 'Listar quaisquer ALTERAÇÕES DE QUEBRA / BREAKING CHANGES (opcional):\n',
+    breaking:
+      'Listar quaisquer ALTERAÇÕES DE QUEBRA / BREAKING CHANGES (opcional):\n',
     footer:
       'Liste quaisquer conclusões de PROBLEMAS / ISSUES por esta alteração (opcional). Ex.: #31, #34:\n',
     confirmCommit: 'Tem certeza de que deseja continuar com o commit acima?',

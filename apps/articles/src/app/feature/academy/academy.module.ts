@@ -1,9 +1,15 @@
+import { ContentComponent } from './content/content.component';
 import { ArticleService } from './../services/article.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AcademyComponent } from './academy.component';
-import { CommonUiKitModule, CustomMaterialModule, SeekLogoModule, SeekSidebarModule } from '@wseek/ui-kit';
+import {
+  CommonUiKitModule,
+  CustomMaterialModule,
+  SeekLogoModule,
+  SeekSidebarModule,
+} from '@wseek/ui-kit';
 import { ArticlesService } from '../services/articles.service';
 import { ArticleComponent } from './article/article.component';
 
@@ -29,7 +35,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AcademyComponent, ArticleComponent],
+  declarations: [AcademyComponent, ArticleComponent, ContentComponent],
   imports: [
     CommonModule,
     SeekLogoModule,
@@ -38,9 +44,6 @@ const routes: Routes = [
     CustomMaterialModule,
     RouterModule.forChild(routes),
   ],
-  providers: [
-    ArticlesService,
-    ArticleService
-  ]
+  providers: [ArticlesService, ArticleService],
 })
 export class AcademyModule {}
