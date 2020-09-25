@@ -57,6 +57,12 @@
     },
     "global-util-mapper": {
       "tags": ["type:util", "scope:global"]
+    },
+    "common-ui-auth": {
+      "tags": ["type:ui", "scope:common"]
+    },
+    "global-util-auth": {
+      "tags": ["type:util", "scope:global"]
     }
   }
 }

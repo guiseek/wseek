@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
 
 // import { Mat } from '@angular/material';
 // import { Mat } from '@angular/material';
@@ -23,6 +24,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatInputModule,
     MatIconModule,
     MatTabsModule,
+    MatCardModule
   ],
 })
 export class CustomMaterialModule {}
