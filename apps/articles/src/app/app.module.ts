@@ -26,9 +26,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ShellComponent } from './shell/shell.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 export const routes: Routes = [
-  // { path: '', pathMatch: 'full', redirectTo: 'academy' },
+  { path: '', pathMatch: 'full', redirectTo: 'academy/articles' },
   {
     path: '',
     component: ShellComponent,
@@ -37,9 +38,16 @@ export const routes: Routes = [
       {
         path: 'academy',
         loadChildren: () =>
-          import('./feature/academy/academy.module').then((m) => m.AcademyModule),
+          import('./feature/academy/academy.module').then(
+            (m) => m.AcademyModule
+          ),
       },
-    ]
+      {
+        path: 'blog',
+        loadChildren: () =>
+          import('./blog/blog.module').then((m) => m.BlogModule),
+      },
+    ],
   },
 ];
 
@@ -66,6 +74,7 @@ export const routes: Routes = [
 
     CommonUiKitModule,
     CommonUtilMockModule,
+    ScullyLibModule,
   ],
   providers: [AppLocale.forRoot(), { provide: 'nav', useValue: navigation }],
   bootstrap: [AppComponent],

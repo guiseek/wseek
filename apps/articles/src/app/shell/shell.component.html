@@ -45,7 +45,9 @@
           <ng-container *ngTemplateOutlet="toolbar"></ng-container>
         </ng-container>
 
-        <content></content>
+        <!-- Seek Content -->
+        <seek-content></seek-content>
+        <!-- /Seek Content -->
 
         <ng-container *ngIf="config.layout.footer.position === 'below-static'">
           <ng-container *ngTemplateOutlet="footer"></ng-container>

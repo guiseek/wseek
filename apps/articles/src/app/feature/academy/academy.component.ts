@@ -4,6 +4,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 // import { ArticlesFacade, ArticlesService } from '@seekboard/academy/domain';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { ScullyRoutesService } from '@scullyio/ng-lib';
 
 @Component({
   selector: 'wseek-academy',
@@ -27,10 +28,18 @@ export class AcademyComponent implements OnInit, OnDestroy {
    *
    * @param {ArticlesService} _academyArticlesService
    */
-  constructor(private _academyArticlesService: ArticlesService) {
+  constructor(
+    private _academyArticlesService: ArticlesService,
+    private _scully: ScullyRoutesService
+  ) {
     // Set the defaults
     this.currentCategory = 'all';
     this.searchTerm = '';
+
+    this._scully.available$.subscribe((routes) => {
+      console.log(routes);
+
+    })
 
     // Set the private defaults
     this._destroy = new Subject();

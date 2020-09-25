@@ -19,13 +19,13 @@ export const appConfig: SeekConfig = {
       customBackgroundColor: false,
       background: 'seek-white-500',
       hidden: false,
-      position: 'below-static',
+      position: 'below-fixed',
     },
     footer: {
       customBackgroundColor: true,
       background: 'seek-navy-900',
       hidden: false,
-      position: 'below-fixed',
+      position: 'below-static',
     },
     sidepanel: {
       hidden: false,

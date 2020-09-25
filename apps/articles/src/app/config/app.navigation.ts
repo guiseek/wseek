@@ -17,6 +17,14 @@ export const navigation: SeekNavigation[] = [
         url: '/academy',
       },
       {
+        id: 'blog',
+        title: 'Blog',
+        translate: 'NAV.BLOG',
+        type: 'item',
+        icon: 'toc',
+        url: '/blog',
+      },
+      {
         id: 'chat',
         title: 'Chat',
         translate: 'NAV.CHAT',
