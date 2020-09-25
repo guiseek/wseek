@@ -10,20 +10,42 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@wseek/ui-kit": ["libs/common/ui-kit/src/index.ts"],
-      "@wseek/common/util-mock": ["libs/common/util-mock/src/index.ts"],
-      "@wseek/chat-panel": ["libs/common/chat-panel/src/index.ts"],
-      "@wseek/ng-crud": ["libs/ng/crud/src/index.ts"],
-      "@wseek/global/util-mapper": ["libs/global/util-mapper/src/index.ts"],
-      "@wseek/ui-auth": ["libs/common/ui-auth/src/index.ts"],
-      "@wseek/global/util-auth": ["libs/global/util-auth/src/index.ts"]
+      "@wseek/ui-kit": [
+        "libs/common/ui-kit/src/index.ts"
+      ],
+      "@wseek/common/util-mock": [
+        "libs/common/util-mock/src/index.ts"
+      ],
+      "@wseek/chat-panel": [
+        "libs/common/chat-panel/src/index.ts"
+      ],
+      "@wseek/global/util-mapper": [
+        "libs/global/util-mapper/src/index.ts"
+      ],
+      "@wseek/ui-auth": [
+        "libs/common/ui-auth/src/index.ts"
+      ],
+      "@wseek/global/util-auth": [
+        "libs/global/util-auth/src/index.ts"
+      ],
+      "@wseek/ngex-crud": [
+        "libs/ngex/crud/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
