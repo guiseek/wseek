@@ -1,6 +1,6 @@
 {
   "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
-  "name": "ng-crud",
+  "name": "ngex-crud",
   "version": "0.0.1",
   "schematics": {
     "ng-crud": {
@@ -12,6 +12,11 @@
       "factory": "./src/schematics/ng-crud-module/index",
       "schema": "./src/schematics/ng-crud-module/schema.json",
       "description": "Crud module for lib"
+    },
+    "ne-crud-module": {
+      "factory": "./src/schematics/ne-crud-module/schematic",
+      "schema": "./src/schematics/ne-crud-module/schema.json",
+      "description": "NestJS Crud Module"
     }
   }
 }

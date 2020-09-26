@@ -1,0 +1,39 @@
+import { AutoMapper, ProfileBase, Profile, mapFrom, mapWith } from 'nestjsx-automapper';
+import { <%= classify(name) %> } from '../models/<%=dasherize(name)%>.model';
+import { <%= classify(name) %>InformationVm } from '../view-models/<%=dasherize(name)%>-information.vm';
+import { <%= classify(name) %>Vm } from '../view-models/<%=dasherize(name)%>.vm';
+
+@Profile()
+class <%= classify(name) %>Profile extends ProfileBase {
+  constructor(mapper: AutoMapper) {
+    super();
+    mapper
+      .createMap(<%= classify(name) %>, <%= classify(name) %>Vm)
+      .forMember(
+        d => d.fullName,
+        mapFrom(s => s.firstName + ' ' + s.lastName)
+      )
+      .forMember(
+        d => d.roleName,
+        mapFrom(s => (s.role as Role).roleName)
+      )
+      .forMember(
+        d => d.roleId,
+        mapFrom(s => (s.role as Role).id)
+      )
+      .reverseMap();
+
+    mapper
+      .createMap(<%= classify(name) %>, <%= classify(name) %>InformationVm)
+      .forMember(
+        d => d.fullName,
+        mapFrom(s => s.firstName + ' ' + s.lastName)
+      )
+      .reverseMap();
+
+    mapper.createMap(<%= classify(name) %>, Auth<%= classify(name) %>).forMember(
+      d => d.role,
+      mapWith(Role, s => s.role)
+    );
+  }
+}

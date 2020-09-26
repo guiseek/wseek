@@ -26,6 +26,7 @@ import { SeekChatPanelModule } from '@wseek/chat-panel';
 
 import { AppComponent } from './app.component';
 import { AppShellComponent } from './app-shell/app-shell.component';
+import { UserModule } from './user/user.module';
 
 const APP_ROUTES: Routes = [
   {
@@ -38,9 +39,14 @@ const APP_ROUTES: Routes = [
         redirectTo: 'articles',
       },
       {
-        path: '',
+        path: 'articles',
         loadChildren: () =>
           import('./article/article.module').then((m) => m.ArticleModule),
+      },
+      {
+        path: 'users',
+        loadChildren: () =>
+          import('./user/user.module').then((m) => m.UserModule),
       },
     ],
   },

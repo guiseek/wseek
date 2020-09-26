@@ -2,8 +2,8 @@ export const environment = {
   production: false,
   app: {
     host: 'localhost',
-    port: 4200,
-    domain: 'http://localhost:3333'
+    port: 3333,
+    domain: 'http://ubuntu.gui'
   },
   mongo: {
     uri: 'mongodb://ubuntu.gui:27017/wseek',

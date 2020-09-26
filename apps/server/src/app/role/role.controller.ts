@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get } from '@nestjs/common';
 import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
 import {
   ApiErrors,
@@ -19,5 +19,12 @@ export class RoleController {
   @ApiOperationId()
   createRole(@Body() params: CreateRoleParamsVm): Promise<void> {
     return this._roleService.createRole(params);
+  }
+
+  @Get()
+  @ApiCreatedResponse()
+  @ApiOperationId()
+  findRoles(): Promise<Role[]> {
+    return this._roleService.findAllAsync();
   }
 }

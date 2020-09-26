@@ -1,0 +1,25 @@
+import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { ModelType } from '@typegoose/typegoose/lib/types';
+import { BaseService } from '../shared/base.service';
+import { <%= classify(name) %> } from './models/<%=dasherize(name)%>.model';
+
+const headers = new HttpHeaders().set('Accept', 'application/json');
+
+@Injectable()
+export class <%= classify(name) %>Service extends BaseService<<%= classify(name) %>> {
+constructor(
+    @InjectModel(<%= classify(name) %>.modelName) private readonly _<%=dasherize(name)%>Model: ModelType<<%= classify(name) %>>
+  ) {
+    super(_<%=dasherize(name)%>Model);
+  }
+
+  findBy(prop: keyof <%= classify(name) %>, q: string | number): Promise<<%= classify(name) %>> {
+    return this.findOneAsync({ [prop]: q });
+  }
+
+  async createOne(params: Create<%= classify(name) %>ParamsVm): Promise<void> {
+    const new<%= classify(name) %> = this.createModel(params);
+    await this.create(new<%= classify(name) %>);
+  }
+}

@@ -1,0 +1,16 @@
+import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { <%= classify(name) %> } from './models/<%=dasherize(name)%>.model';
+import './profiles/<%=dasherize(name)%>.profile';
+import { <%= classify(name) %>Controller } from './<%=dasherize(name)%>.controller';
+import { <%= classify(name) %>Service } from './<%=dasherize(name)%>.service';
+
+@Module({
+  controllers: [<%= classify(name) %>Controller],
+  imports: [
+    MongooseModule.forFeature([{ name: <%= classify(name) %>.modelName, schema: <%= classify(name) %>.schema }])
+  ],
+  providers: [<%= classify(name) %>Service],
+  exports: [<%= classify(name) %>Service]
+})
+export class <%= classify(name) %>Module {}

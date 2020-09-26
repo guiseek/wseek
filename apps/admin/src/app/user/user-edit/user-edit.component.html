@@ -1,0 +1,52 @@
+<ol class="breadcrumb float-right">
+  <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+  <li class="breadcrumb-item active">Usuário</li>
+</ol>
+<div class="card">
+  <div class="header">
+    <h2 class="title">Usuário Detail</h2>
+  </div>
+  <div class="content">
+    <div *ngIf="feedback" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
+    <form *ngIf="user" #editForm="ngForm" (ngSubmit)="save()">
+    
+      <div class="form-group">
+        <label>Id</label>
+        {{user.id || 'n/a'}} 
+      </div>
+    
+      <div class="form-group">
+        <label for="isSuper">Sudo</label>
+        <input [(ngModel)]="user.isSuper" id="isSuper" name="isSuper" class="form-control">
+      </div>
+    
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input [(ngModel)]="user.email" id="email" name="email" class="form-control">
+      </div>
+    
+      <div class="form-group">
+        <label for="firstName">Nome</label>
+        <input [(ngModel)]="user.firstName" id="firstName" name="firstName" class="form-control">
+      </div>
+    
+      <div class="form-group">
+        <label for="lastName">Sobrenome</label>
+        <input [(ngModel)]="user.lastName" id="lastName" name="lastName" class="form-control">
+      </div>
+    
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input [(ngModel)]="user.password" id="password" name="password" class="form-control">
+      </div>
+    
+      <div class="form-group">
+        <label for="role">Role</label>
+        <input [(ngModel)]="user.role" id="role" name="role" class="form-control">
+      </div>
+    
+      <button type="submit" class="btn btn-primary" [disabled]="!editForm.form.valid">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+    </form>
+  </div>
+</div>

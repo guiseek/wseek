@@ -1,0 +1,35 @@
+import { Controller, Get, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
+import { ApiBearerAuth, ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import { AutoMapper, InjectMapper } from 'nestjsx-automapper';
+import {
+  ApiErrors,
+  ApiOperationId,
+  Permissions,
+} from '../shared/decorators';
+import { PermissionsGuard } from '../shared/guards/permissions.guard';
+import { PermissionPrivilege } from '../shared/permission.enum';
+import { <%= classify(name) %> } from './models/<%=dasherize(name)%>.model';
+import { <%= classify(name) %>Service } from './<%=dasherize(name)%>.service';
+import { <%= classify(name) %>Vm } from './view-models/<%=dasherize(name)%>.vm';
+
+@Controller('<%=dasherize(name)%>s')
+@ApiTags(<%= classify(name) %>.modelName)
+@ApiErrors()
+@ApiBearerAuth()
+export class <%= classify(name) %>Controller {
+  constructor(
+    private readonly _<%=dasherize(name)%>Service: <%= classify(name) %>Service,
+    @InjectMapper() private readonly _mapper: AutoMapper
+  ) {}
+
+  @Get()
+  @UseGuards(AuthGuard(), PermissionsGuard)
+  @Permissions({ <%=dasherize(name)%>: PermissionPrivilege.Read })
+  @ApiOkResponse({ type: <%= classify(name) %>Vm, isArray: true })
+  @ApiOperationId()
+  async get<%= classify(name) %>s(): Promise<<%= classify(name) %>Vm[]> {
+    const <%=dasherize(name)%>s = await this._<%=dasherize(name)%>Service.findAllAsync();
+    return this._mapper.mapArrayAsync(<%=dasherize(name)%>s, <%= classify(name) %>Vm);
+  }
+}

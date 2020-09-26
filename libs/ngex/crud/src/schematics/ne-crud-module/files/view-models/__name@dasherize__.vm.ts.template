@@ -1,0 +1,16 @@
+import { BaseVm, ExposedApiProperty } from '../../shared';
+
+export class <%= classify(name) %>Vm extends BaseVm {
+  @ExposedApiProperty()
+  email: string;
+  @ExposedApiProperty()
+  firstName: string;
+  @ExposedApiProperty()
+  lastName: string;
+  @ExposedApiProperty()
+  fullName: string;
+  @ExposedApiProperty()
+  roleName: string;
+  @ExposedApiProperty()
+  roleId: string;
+}

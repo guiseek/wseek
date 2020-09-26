@@ -1,0 +1,7 @@
+export * from './models/<%=dasherize(name)%>-.model';
+export * from './profiles/<%=dasherize(name)%>-.profile';
+export * from './view-models/<%=dasherize(name)%>-.vm';
+export * from './view-models/<%=dasherize(name)%>--information.vm';
+export * from './<%=dasherize(name)%>-.controller';
+export * from './<%=dasherize(name)%>-.module';
+export * from './<%=dasherize(name)%>-.service';

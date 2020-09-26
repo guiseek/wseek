@@ -15,4 +15,7 @@ export class UserService extends BaseService<User> {
   findByEmail(email: string): Promise<User> {
     return this.findOneAsync({ email });
   }
+  updateUser({ id, ...values }: Partial<User> & Required<{ id: string }>) {
+    return this._userModel.updateOne({ id }, values);
+  }
 }

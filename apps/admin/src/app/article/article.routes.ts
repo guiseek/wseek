@@ -4,11 +4,11 @@ import { ArticleEditComponent } from './article-edit/article-edit.component';
 
 export const ARTICLE_ROUTES: Routes = [
   {
-    path: 'articles',
+    path: '',
     component: ArticleListComponent
   },
   {
-    path: 'articles/:id',
+    path: ':id',
     component: ArticleEditComponent
   }
 ];

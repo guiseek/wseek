@@ -16,6 +16,14 @@ export const APP_NAVIGATION: SeekNavigation[] = [
         icon: 'article',
         url: '/articles',
       },
+      {
+        id: 'users',
+        title: 'Usuários',
+        translate: 'NAV.USERS',
+        type: 'item',
+        icon: 'people',
+        url: '/users',
+      },
     ],
   },
 ];
