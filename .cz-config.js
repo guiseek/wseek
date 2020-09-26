@@ -17,6 +17,11 @@ module.exports = {
   ],
 
   scopes: [
+    { name: 'main', description: 'anything Main scope' },
+    { name: 'main-front', description: 'anything Main Front scope' },
+    { name: 'main-front-admin', description: 'anything Main Front Admin specific' },
+    { name: 'main-api', description: 'anything Main API scope' },
+    { name: 'main-api-admin', description: 'anything Main API Admin specific' },
     { name: 'admin', description: 'anything Admin specific' },
     { name: 'articles', description: 'anything Article specific' },
     { name: 'server', description: 'anything Server specific' },

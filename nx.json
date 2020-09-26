@@ -17,12 +17,7 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
@@ -32,14 +27,10 @@
     },
     "articles-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "articles"
-      ]
+      "implicitDependencies": ["articles"]
     },
     "common-ui-kit": {
-      "tags": [
-        "type:ui"
-      ]
+      "tags": ["type:ui"]
     },
     "common-util-mock": {
       "tags": []
@@ -48,49 +39,40 @@
       "tags": []
     },
     "admin": {
-      "tags": [
-        "type:app"
-      ]
+      "tags": ["type:app"]
     },
     "admin-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "admin"
-      ]
+      "implicitDependencies": ["admin"]
     },
     "server": {
-      "tags": [
-        "type:app"
-      ]
+      "tags": ["type:app"]
     },
     "global-util-mapper": {
-      "tags": [
-        "type:util",
-        "scope:global"
-      ]
+      "tags": ["type:util", "scope:global"]
     },
     "common-ui-auth": {
-      "tags": [
-        "type:ui",
-        "scope:common"
-      ]
+      "tags": ["type:ui", "scope:common"]
     },
     "global-util-auth": {
-      "tags": [
-        "type:util",
-        "scope:global"
-      ]
+      "tags": ["type:util", "scope:global"]
     },
     "ngex-crud": {
-      "tags": [
-        "type:plugin"
-      ]
+      "tags": ["type:plugin"]
     },
     "ngex-crud-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "ngex-crud"
-      ]
+      "implicitDependencies": ["ngex-crud"]
+    },
+    "main-front-admin": {
+      "tags": ["scope:main"]
+    },
+    "main/front-admin-e2e": {
+      "tags": [],
+      "implicitDependencies": ["main-front-admin"]
+    },
+    "main-api-admin": {
+      "tags": ["scope:main"]
     }
   }
 }

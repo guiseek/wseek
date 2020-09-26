@@ -30,9 +30,7 @@
                 "output": "./imgs"
               }
             ],
-            "styles": [
-              "apps/articles/src/styles.scss"
-            ],
+            "styles": ["apps/articles/src/styles.scss"],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "libs/common/ui-kit/scss",
@@ -40,9 +38,7 @@
               ]
             },
             "scripts": [],
-            "allowedCommonJsDependencies": [
-              "lodash"
-            ]
+            "allowedCommonJsDependencies": ["lodash"]
           },
           "configurations": {
             "production": {
@@ -99,10 +95,7 @@
               "apps/articles/tsconfig.app.json",
               "apps/articles/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/articles/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/articles/**/*"]
           }
         },
         "test": {
@@ -135,13 +128,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/articles-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/articles-e2e/**/*"
-            ]
+            "tsConfig": ["apps/articles-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/articles-e2e/**/*"]
           }
         }
       }
@@ -171,10 +159,7 @@
               "libs/common/ui-kit/tsconfig.lib.json",
               "libs/common/ui-kit/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/common/ui-kit/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/common/ui-kit/**/*"]
           }
         },
         "test": {
@@ -223,10 +208,7 @@
               "libs/common/util-mock/tsconfig.lib.json",
               "libs/common/util-mock/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/common/util-mock/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/common/util-mock/**/*"]
           }
         },
         "test": {
@@ -268,10 +250,7 @@
               "libs/common/chat-panel/tsconfig.lib.json",
               "libs/common/chat-panel/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/common/chat-panel/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/common/chat-panel/**/*"]
           }
         },
         "test": {
@@ -317,9 +296,7 @@
                 "output": "./imgs"
               }
             ],
-            "styles": [
-              "apps/admin/src/styles.scss"
-            ],
+            "styles": ["apps/admin/src/styles.scss"],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "libs/common/ui-kit/scss",
@@ -327,9 +304,7 @@
               ]
             },
             "scripts": [],
-            "allowedCommonJsDependencies": [
-              "lodash"
-            ]
+            "allowedCommonJsDependencies": ["lodash"]
           },
           "configurations": {
             "production": {
@@ -387,10 +362,7 @@
               "apps/admin/tsconfig.app.json",
               "apps/admin/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/admin/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/admin/**/*"]
           }
         },
         "test": {
@@ -423,13 +395,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/admin-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/admin-e2e/**/*"
-            ]
+            "tsConfig": ["apps/admin-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/admin-e2e/**/*"]
           }
         }
       }
@@ -447,9 +414,7 @@
             "outputPath": "dist/apps/server",
             "main": "apps/server/src/main.ts",
             "tsConfig": "apps/server/tsconfig.app.json",
-            "assets": [
-              "apps/server/src/assets"
-            ]
+            "assets": ["apps/server/src/assets"]
           },
           "configurations": {
             "production": {
@@ -478,10 +443,7 @@
               "apps/server/tsconfig.app.json",
               "apps/server/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/server/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/server/**/*"]
           }
         },
         "test": {
@@ -506,10 +468,7 @@
               "libs/global/util-mapper/tsconfig.lib.json",
               "libs/global/util-mapper/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/global/util-mapper/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/global/util-mapper/**/*"]
           }
         },
         "test": {
@@ -526,9 +485,7 @@
             "tsConfig": "libs/global/util-mapper/tsconfig.lib.json",
             "packageJson": "libs/global/util-mapper/package.json",
             "main": "libs/global/util-mapper/src/index.ts",
-            "assets": [
-              "libs/global/util-mapper/*.md"
-            ]
+            "assets": ["libs/global/util-mapper/*.md"]
           }
         }
       }
@@ -558,10 +515,7 @@
               "libs/common/ui-auth/tsconfig.lib.json",
               "libs/common/ui-auth/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/common/ui-auth/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/common/ui-auth/**/*"]
           }
         },
         "test": {
@@ -591,10 +545,7 @@
               "libs/global/util-auth/tsconfig.lib.json",
               "libs/global/util-auth/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/global/util-auth/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/global/util-auth/**/*"]
           }
         },
         "test": {
@@ -611,9 +562,7 @@
             "tsConfig": "libs/global/util-auth/tsconfig.lib.json",
             "packageJson": "libs/global/util-auth/package.json",
             "main": "libs/global/util-auth/src/index.ts",
-            "assets": [
-              "libs/global/util-auth/*.md"
-            ]
+            "assets": ["libs/global/util-auth/*.md"]
           }
         }
       }
@@ -632,10 +581,7 @@
               "libs/ngex/crud/tsconfig.lib.json",
               "libs/ngex/crud/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ngex/crud/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ngex/crud/**/*"]
           }
         },
         "test": {
@@ -686,6 +632,182 @@
             "npmPackageName": "@wseek/crud",
             "pluginOutputPath": "dist/libs/ng/crud",
             "jestConfig": "apps/ngex/crud-e2e/jest.config.js"
+          }
+        }
+      }
+    },
+    "main-front-admin": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/main/front/admin",
+      "sourceRoot": "apps/main/front/admin/src",
+      "prefix": "seek",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/main/front/admin",
+            "index": "apps/main/front/admin/src/index.html",
+            "main": "apps/main/front/admin/src/main.ts",
+            "polyfills": "apps/main/front/admin/src/polyfills.ts",
+            "tsConfig": "apps/main/front/admin/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/main/front/admin/src/favicon.ico",
+              "apps/main/front/admin/src/assets"
+            ],
+            "styles": ["apps/main/front/admin/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/main/front/admin/src/environments/environment.ts",
+                  "with": "apps/main/front/admin/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "main-front-admin:build",
+            "proxyConfig": "apps/main/front/admin/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "main-front-admin:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "main-front-admin:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/main/front/admin/tsconfig.app.json",
+              "apps/main/front/admin/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/main/front/admin/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/main/front/admin/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "main/front-admin-e2e": {
+      "root": "apps/main/front/admin-e2e",
+      "sourceRoot": "apps/main/front/admin-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/main/front/admin-e2e/cypress.json",
+            "tsConfig": "apps/main/front/admin-e2e/tsconfig.e2e.json",
+            "devServerTarget": "main-front-admin:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "main-front-admin:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/main/front/admin-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/main/front/admin-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "main-api-admin": {
+      "root": "apps/main/api/admin",
+      "sourceRoot": "apps/main/api/admin/src",
+      "projectType": "application",
+      "prefix": "main-api-admin",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/main/api/admin",
+            "main": "apps/main/api/admin/src/main.ts",
+            "tsConfig": "apps/main/api/admin/tsconfig.app.json",
+            "assets": ["apps/main/api/admin/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/main/api/admin/src/environments/environment.ts",
+                  "with": "apps/main/api/admin/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "main-api-admin:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/main/api/admin/tsconfig.app.json",
+              "apps/main/api/admin/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/main/api/admin/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/main/api/admin/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
